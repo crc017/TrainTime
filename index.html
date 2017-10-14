@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Train Time</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <style>
+    .panel-body a {
+      word-break: break-all;
+    }
+
+    #wellSection {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+ <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+  <div class="container">
+
+    <div class="jumbotron" >
+      <h1 class="text-center">Train Time</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        
+        <div class="panel panel-primary">
+
+          <!-- Section for display of current trains -->
+          <div class="panel-heading">
+            <h3 class="panel-title">Active Train Times:</h3>
+          </div>
+
+          <!-- Div to Display Train Schedule Info -->
+          <div class="panel-body" id="wellSection">
+              <div class="row">
+                  <table class="table table-hover" id="wellSection1">
+                    <tr>
+                      <td><strong>Train Name:</strong></td>
+                      <td><strong>Destination:</strong></td>
+                      <td><strong>Frequency:</strong></td>
+                      <td><strong>Next Arrival Time:</strong></td>
+                      <td><strong>Minutes Before Next Arrival:</strong><td>
+                    </tr>
+                    <tr>
+                      <td id="trainNameOutput">
+                      </td>
+                      <td id="destinationOutput">
+                      </td>
+                      <td id="frequencyOutput">
+                      </td>
+                      <td id="nextTimeOutput">
+                      </td>
+                      <td id="timeRemainingOutput">
+                      </td>
+                    </tr>
+                  </table>
+              </div>
+          </div>
+        </div>
+
+        <!--Add Train Div -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Add Trains:</h3>
+          </div>
+          <div class="panel-body">
+
+            <!-- Form for Train Info Input-->
+            <form role="form">
+
+              <!-- Train Name Input-->
+              <div class="form-group">
+                <label for="search">Train Name:</label>
+                <input type="text" class="form-control" id="trainName">
+              </div>
+
+              <!-- Destination Input  -->
+              <div class="form-group">
+                <label for="pwd">Destination:</label>
+                <input class="form-control" id="destination">
+						</input>
+              </div>
+
+              <!-- Div for First Train Time Input-->
+              <div class="form-group">
+                <label for="start-year">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="startTime">
+              </div>
+
+              <!-- Here we capture the End Year Parameter -->
+              <div class="form-group">
+                <label for="end-year">Frequency (min):</label>
+                <input type="text" class="form-control" id="frequency">
+              </div>
+
+              <!-- Here we have our final submit button -->
+              <button type="submit" class="btn btn-default" id="chooChoo"><i class="fa fa-train" aria-hidden="true"></i> Choo! Choo!</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  
+  <!-- FireBase -->
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+
+  <!-- Code to the JavaScript File -->
+  <script src="assets/javascript/app.js"></script>
+
+
+
+</body>
+
+</html>
